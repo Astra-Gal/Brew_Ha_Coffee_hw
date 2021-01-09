@@ -1,0 +1,7 @@
+.coffee-list-item {
+    margin: 0.5rem 0.5rem;
+    padding: 0.5rem 0.8rem;
+    border: 1px solid #20437c;
+    border-radius: 5%;
+    background: #ddeaff;
+}
