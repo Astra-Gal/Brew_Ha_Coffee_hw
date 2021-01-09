@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brew Ha Coffee</title>
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/buttons.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/forms.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/grids.css" />
+
+
+
     <script src="js/app.js"></script>
 </head>
 
@@ -18,25 +24,25 @@
     <form id="new-coffee-form">
         <div id="form-wrapper">
             <div class="form-item">
-                <label for="coffee-name" class="primary">Coffee Name</label>
-                <input type="text" id="coffee-name" required/>
+                <label for="coffee" class="primary">Coffee Name</label>
+                <input type="text" id="coffee" required="required">
             </div>
 
             <div class="form-item">
-                <label for="single-origin">Single Origin</label>
-                <input type="radio" name="origin-type" id="single-origin" value="Single-origin" checked="checked">
+                <label for="single">Single Origin</label>
+                <input type="radio" name="origintype" id="single" value="Single-origin" checked="checked">
 
                 <label for="blend">Blend</label>
-                <input type="radio" name="origin-type" id="blend" value="Blend">
+                <input type="radio" name="origintype" id="blend" value="Blend">
             </div>
 
             <div class="form-item">
-                <label for="country-of-origin" class="primary">Country of Origin</label>
-                <input type="text" id="country-of-origin" required/>
+                <label for="country" class="primary">Country of Origin</label>
+                <input type="text" id="country" required="required">
             </div>
 
             <div class="form-item">
-                <select id="process-select">
+                <select id="process">
                     <option disabled selected>Process</option>
                     <option value="Washed">Washed</option>
                     <option value="Natural">Natural</option>
@@ -46,19 +52,21 @@
 
             <div class="form-item">
                 <label for="altitude" class="primary">Altitude</label>
-                <input type="text" id="altitude" required/>
+                <input type="text" id="altitude">
             </div>
 
             <div class="form-item">
                 <label for="cultivar" class="primary">Cultivar</label>
-                <input type="text" id="cultivar" required/>
+                <input type="text" id="cultivar">
             </div>
 
             <div class="form-item">
-                <h4>Roast Level</h4>
-                <p>(where 1 is basically a green bean and 10 is charcoal/Starbucks)</p>
+                <div>
+                    <input type="range" id="roast" name="roast">
+                    <label for="roast">Roast Level</label>
+                </div>
 
-                <label for="roast-level-1">1</label>
+                <!-- <label for="roast-level-1">1</label>
                 <input type="radio" name="roast-level" id="roast-level-1" value="1">
                 <label for="roast-level-2">2</label>
                 <input type="radio" name="roast-level" id="roast-level-2" value="2">
@@ -77,21 +85,33 @@
                 <label for="roast-level-9">9</label>
                 <input type="radio" name="roast-level" id="roast-level-9" value="9">
                 <label for="roast-level-10">10</label>
-                <input type="radio" name="roast-level" id="roast-level-10" value="10">                
+                <input type="radio" name="roast-level" id="roast-level-10" value="10">                 -->
             </div>
 
             <div class="form-item">
-                <label for="tasting-notes" class="primary">Tasting Notes</label>
-                <input type="text" id="tasting-notes" required>
+                <label for="notes" class="primary">Tasting Notes</label>
+                <input type="text" id="notes" required>
             </div>
+
+            <div class="form-item">
+                <label for="price" class="primary">Price</label>
+                <input type="text" id="price" required>
+            </div>
+
         </div>
-        <input type="submit" value="save"/>
+        <input type="submit" value="save">
     </form>
 
-    <h2>Our Coffees</h2>
-    <div class="list-wrapper">
-        <ul id="coffees-list"></ul>
+    <div class="list-grid-wrapper">
+        <section class="list-grid">
+            <h2>Our Coffees</h2>
+            <ul id="coffees-list"></ul>
+        </section>
     </div>
+
+    <button id="delete-all">Delete All</button>
+
+
 </body>
 
 </html>
