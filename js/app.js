@@ -37,13 +37,13 @@ const createCoffeeListItem = (form) => {
     process.textContent = `process: ${form.process.value}`;
     coffeeListItem.appendChild(process);
 
-    const altitude = document.createElement('p');
-    altitude.textContent = `altitude: ${form.altitude.value} metres above sea level`;
-    coffeeListItem.appendChild(altitude);
+    // const altitude = document.createElement('p');
+    // altitude.textContent = `altitude: ${form.altitude.value} metres above sea level`;
+    // coffeeListItem.appendChild(altitude);
 
-    const cultivar = document.createElement('p');
-    cultivar.textContent = `cultivar: ${form.cultivar.value}`;
-    coffeeListItem.appendChild(cultivar);
+    // const cultivar = document.createElement('p');
+    // cultivar.textContent = `cultivar: ${form.cultivar.value}`;
+    // coffeeListItem.appendChild(cultivar);
 
     const roastLevel = document.createElement('p');
     roastLevel.textContent = `roast level: ${form.roast.value}`;
@@ -53,9 +53,13 @@ const createCoffeeListItem = (form) => {
     tastingNotes.textContent = `tasting notes: ${form.notes.value}`;
     coffeeListItem.appendChild(tastingNotes);
 
-    const price = document.createElement('p');
-    price.textContent = `price: £${form.price.value}`;
-    coffeeListItem.appendChild(price);
+    const fullDescription = document.createElement('p');
+    fullDescription.textContent = `full description: ${form.description.value}`;
+    coffeeListItem.appendChild(fullDescription);
+
+    // const price = document.createElement('p');
+    // price.textContent = `price: £${form.price.value}`;
+    // coffeeListItem.appendChild(price);
 
     return coffeeListItem;
 }

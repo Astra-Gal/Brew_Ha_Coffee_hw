@@ -9,7 +9,14 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/forms.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/grids.css" />
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Codystar&display=swap" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
 
     <script src="js/app.js"></script>
 </head>
@@ -21,36 +28,44 @@
         </div>
     </header>
 
+    <div class="list-grid-wrapper">
     <form id="new-coffee-form">
         <div id="form-wrapper">
             <div class="form-item">
-                <label for="coffee" class="primary">Coffee Name</label>
-                <input type="text" id="coffee" required="required">
+                <div class="input">
+                    <input type="text" id="coffee" class="primary" placeholder="Coffee Name" required="required">
+                    <span></span>
+                </div>
             </div>
 
             <div class="form-item">
-                <label for="single">Single Origin</label>
-                <input type="radio" name="origintype" id="single" value="Single-origin" checked="checked">
+                
+                    <label for="single">Single Origin</label>
+                    <input type="radio" name="origintype" id="single" value="Single-origin" checked="checked">
 
-                <label for="blend">Blend</label>
-                <input type="radio" name="origintype" id="blend" value="Blend">
+                    <label for="blend">Blend</label>
+                    <input type="radio" name="origintype" id="blend" value="Blend">
+                
             </div>
 
             <div class="form-item">
-                <label for="country" class="primary">Country of Origin</label>
-                <input type="text" id="country" required="required">
+                <div class="input">
+                    <input type="text" id="country" class="primary" placeholder="Country of Origin" required="required">
+            </div>
             </div>
 
             <div class="form-item">
+                <div class="input">
                 <select id="process">
                     <option disabled selected>Process</option>
                     <option value="Washed">Washed</option>
                     <option value="Natural">Natural</option>
                     <option value="Honey">Honey</option>
                 </select>
+                </div>
             </div>
 
-            <div class="form-item">
+            <!-- <div class="form-item">
                 <label for="altitude" class="primary">Altitude</label>
                 <input type="text" id="altitude">
             </div>
@@ -58,7 +73,7 @@
             <div class="form-item">
                 <label for="cultivar" class="primary">Cultivar</label>
                 <input type="text" id="cultivar">
-            </div>
+            </div> -->
 
             <div class="form-item">
                 <div>
@@ -89,25 +104,31 @@
             </div>
 
             <div class="form-item">
-                <label for="notes" class="primary">Tasting Notes</label>
-                <input type="text" id="notes" required>
+                <div class="input">
+                <input type="text" id="notes" class="primary" placeholder="Three Key Notes" required>
+                </div>
             </div>
 
             <div class="form-item">
-                <label for="price" class="primary">Price</label>
-                <input type="text" id="price" required>
+                <div class="input">
+                <textarea id="description" class="primary" placeholder="Full Description"></textarea>
+                </div>
             </div>
 
+            <!-- <div class="form-item">
+                <label for="price" class="primary">Price</label>
+                <input type="text" id="price" required>
+            </div> -->
+
+            <input type="submit" id="save" value="save">
         </div>
-        <input type="submit" value="save">
+    </div>
     </form>
 
-    <div class="list-grid-wrapper">
-        <section class="list-grid">
-            <h2>Our Coffees</h2>
-            <ul id="coffees-list"></ul>
-        </section>
-    </div>
+    <section class="list-grid-wrapper">
+        <h2>Our Coffees</h2>
+            <ul class="list-grid" id="coffees-list"></ul>
+    </section>
 
     <button id="delete-all">Delete All</button>
 
