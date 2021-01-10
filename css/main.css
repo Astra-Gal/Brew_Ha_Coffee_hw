@@ -16,43 +16,50 @@ body {
     font-weight: bold;
 }
 
-/* body {
-    font-family: Palatino;
+.accordion {
+    background: white;
+    display: grid;
 }
 
-#form-wrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-}
-
-.form-item {
-    margin-right: 1.8rem;
-}
-
-label.primary {
+.accordion__button {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    justify-content: center;
+    color: rgb(184, 241, 184);
+    position: relative;
+    background: rgb(146, 144, 144);
+    padding: 13px;
     display: block;
-    margin: 0.4em 0;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 9999em;
+    cursor: pointer;
+    transition: background 0.2s;
 }
 
-label::after {
-    content: ":";
+.accordion__button::after {
+    content: '\25be';
+    float: right;
+    margin-right: 15px;
+    transform: scale(1.5);
 }
 
-button, input[type="submit"] {
-    margin-top: 1rem;
+.accordion__button--active {
+    background: rgb(196, 196, 196);
 }
 
-#coffee-list {
-    display: flex;
-    flex-wrap: wrap;
-    list-style-type: none;
+.accordion__button--active::after {
+    content: '\25b4'
 }
 
-.coffee-list-item {
-    margin: 0.5rem 0.5rem;
-    padding: 0.5rem 0.8rem;
-    border: 1px solid #20437c;
-    border-radius: 5%;
-    background: #ddeaff;
-} */
+.accordion__content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s;
+
+    padding: 0 15px;
+    font-family: 'Raleway', sans-serif;
+    background: #eeeeee;
+}
+

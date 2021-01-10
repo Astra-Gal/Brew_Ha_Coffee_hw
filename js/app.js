@@ -4,7 +4,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const deleteAllButton = document.querySelector('#delete-all');
     deleteAllButton.addEventListener('click', handleDeleteAllClick);
-})
+
+    document.querySelectorAll('.accordion__button').forEach(button => {
+        button.addEventListener('click', () => {
+            const accordionContent = button.nextElementSibling;
+
+            button.classList.toggle('accordion__button--active');
+
+            if (button.classList.contains('accordion__button--active')) {
+                accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+            } else {
+                accordionContent.style.maxHeight = 0;
+            }
+        });
+    });
+});
 
 const handleNewCoffeeFormSubmit = (event) => {
     event.preventDefault();
@@ -46,18 +60,28 @@ const createCoffeeListItem = (form) => {
     // coffeeListItem.appendChild(cultivar);
 
     const roastLevel = document.createElement('p');
-    roastLevel.textContent = `roast level: ${form.roast.value}`;
+    if(form.roast.value <= '30') {
+        roastLevel.textContent = 'roast level: Dark';
+    } else if (form.roast.value <= '60') {
+        roastLevel.textContent = 'roast level: Medium';
+    } else {
+        roastLevel.textContent = 'roast level: Light';
+
+    }
+
     coffeeListItem.appendChild(roastLevel); // will it work??!
 
-    const tastingNotes = document.createElement('p');
-    tastingNotes.textContent = `tasting notes: ${form.notes.value}`;
-    tastingNotes.classList.add('detailed');
-    coffeeListItem.appendChild(tastingNotes);
+    const accordionDiv = document.createElement('div'); // create accordion div
+    accordionDiv.classList.add('accordion');
+    accordionDiv.insertAdjacentHTML('afterbegin', `<button type="button" class="accordion__button">tasting notes: ${form.notes.value}  </button>`);
+    coffeeListItem.appendChild(accordionDiv);
+    
+    const accordionContent = document.createElement('div');
+    accordionContent.classList.add('accordion__content');
+    accordionContent.insertAdjacentHTML('afterbegin', `<p>full description: ${form.description.value} </p>`);
+    accordionDiv.appendChild(accordionContent);
 
-    const fullDescription = document.createElement('p');
-    fullDescription.textContent = `full description: ${form.description.value}`;
-    // add it to css class for accordion targetting
-    coffeeListItem.appendChild(fullDescription);
+    
 
     // const price = document.createElement('p');
     // price.textContent = `price: £${form.price.value}`;
@@ -72,5 +96,4 @@ const handleDeleteAllClick = (event) => {
 }
 
 
-// might I need this in the handle..submit? 
 // could sort alphabetically??!!

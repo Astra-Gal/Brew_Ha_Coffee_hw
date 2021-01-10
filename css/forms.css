@@ -32,7 +32,6 @@
     border-radius: 9999em;
 }
 
-/*  */
 
 .input >:not(span) {
     position: relative;
@@ -95,9 +94,6 @@
 
 }
 
-/* {
-    background: rgb(184, 241, 184);;
-} */
 
 /* slider styling - see slider file */
 
