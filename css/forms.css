@@ -20,6 +20,8 @@
 
 
 
+
+
 .input {
     position: relative;
     font-size: 1.5em;
@@ -29,6 +31,8 @@
     display: grid;
     border-radius: 9999em;
 }
+
+/*  */
 
 .input >:not(span) {
     position: relative;
@@ -85,6 +89,15 @@
     text-align: left;
     border-radius: 5555em;
 }
+
+.input > input:focus, select:focus, textarea:focus {
+    background: linear-gradient(21deg, rgb(184, 241, 184), white);
+
+}
+
+/* {
+    background: rgb(184, 241, 184);;
+} */
 
 /* slider styling - see slider file */
 

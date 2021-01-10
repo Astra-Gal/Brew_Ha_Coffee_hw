@@ -30,7 +30,7 @@ const createCoffeeListItem = (form) => {
     coffeeListItem.appendChild(originType);
 
     const countryOfOrigin = document.createElement('h3');
-    countryOfOrigin.textContent = `country of origin: ${form.country.value}`;
+    countryOfOrigin.textContent = `origin: ${form.country.value}`;
     coffeeListItem.appendChild(countryOfOrigin);
 
     const process = document.createElement('h4');
