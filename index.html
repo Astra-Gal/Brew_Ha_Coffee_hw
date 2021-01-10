@@ -8,6 +8,9 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/buttons.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/forms.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/grids.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/sliders.css" />
+
+
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Codystar&display=swap" rel="stylesheet">
@@ -39,18 +42,22 @@
             </div>
 
             <div class="form-item">
-                
-                    <label for="single">Single Origin</label>
-                    <input type="radio" name="origintype" id="single" value="Single-origin" checked="checked">
+                <div class="radio-wrapper">
+                    <div class="radio-button-one">
+                        <label for="single">Single Origin</label>
+                        <input type="radio" name="origintype" id="single" value="Single-origin" checked="checked">
+                    </div>
 
-                    <label for="blend">Blend</label>
-                    <input type="radio" name="origintype" id="blend" value="Blend">
-                
+                    <div class="radio-button-two">
+                        <label for="blend">Blend</label>
+                        <input type="radio" name="origintype" id="blend" value="Blend">
+                    </div>
+                </div>
             </div>
 
             <div class="form-item">
                 <div class="input">
-                    <input type="text" id="country" class="primary" placeholder="Country of Origin" required="required">
+                    <input type="text" id="country" class="primary" placeholder="Origin" required="required">
             </div>
             </div>
 
@@ -76,9 +83,9 @@
             </div> -->
 
             <div class="form-item">
-                <div>
-                    <input type="range" id="roast" name="roast">
+                <div class="slider-wrapper">
                     <label for="roast">Roast Level</label>
+                    <input type="range" id="roast" name="roast">
                 </div>
 
                 <!-- <label for="roast-level-1">1</label>

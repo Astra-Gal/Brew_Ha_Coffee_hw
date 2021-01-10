@@ -51,10 +51,12 @@ const createCoffeeListItem = (form) => {
 
     const tastingNotes = document.createElement('p');
     tastingNotes.textContent = `tasting notes: ${form.notes.value}`;
+    tastingNotes.classList.add('detailed');
     coffeeListItem.appendChild(tastingNotes);
 
     const fullDescription = document.createElement('p');
     fullDescription.textContent = `full description: ${form.description.value}`;
+    // add it to css class for accordion targetting
     coffeeListItem.appendChild(fullDescription);
 
     // const price = document.createElement('p');
